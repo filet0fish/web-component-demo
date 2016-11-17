@@ -1,25 +1,15 @@
-<template id="welcome-template">
-    <style>
-        h1 { color: cornflowerblue; }
-    </style>
-    <h1>Hello, templates!</h1>
-</template>
-<script>
-const me = document.currentScript.ownerDocument;
+<link rel="import" href="../bower_components/polymer/polymer.html">
 
-class WelcomeClass extends HTMLElement {
-
-    constructor() {
-        super();
-
-        let shadowRoot = this.attachShadow({mode: 'open'});
-
-        const t = me.querySelector('#welcome-template');
-        const instance = t.content.cloneNode(true);
-        shadowRoot.appendChild(instance);
-    }
-
-    connectedCallback() {}
-}
-window.customElements.define('welcome-message', WelcomeClass);
-</script>
+<dom-module id="welcome-message">
+    <template>
+        <style>
+            h1 { color: greenyellow; }
+        </style>
+        <h1>Hello, Polymer!</h1>
+    </template>
+    <script>
+        Polymer({
+            is: 'welcome-message'
+        });
+    </script>
+</dom-module>
