@@ -1,7 +1,28 @@
+<!doctype html>
 <html>
     <head>
         <title>Simplest. Web. Page. Ever.</title>
-        <script src="node_modules/webcomponents.js/webcomponents-lite.min.js"></script>
+
+        <script>
+
+            // Set Polyfills (if needed)
+            if ('registerElement' in document
+                && 'import' in document.createElement('link')
+                && 'content' in document.createElement('template')) {
+                // browser has web components
+            } else {
+                // polyfill web components
+                let e = document.createElement('script');
+                e.src = 'bower_components/webcomponentsjs/webcomponents-lite.min.js';
+                document.head.appendChild(e);
+            }
+
+            Polymer = {
+                lazyRegister: 'max',
+                useNativeCSSProperties: true,
+                dom: 'shadow'
+            };
+        </script>
 
         <link rel="import" href="bower_components/polymer/polymer.html" />
         <link rel="import" href="elements/welcome-message.html" />
