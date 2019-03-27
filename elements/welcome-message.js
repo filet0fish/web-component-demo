@@ -2,9 +2,6 @@ class WelcomeClass extends HTMLElement {
 
     constructor() {
         super();
-    }
-
-    connectedCallback() {
         this.innerHTML = "Hello, Web Components";
     }
 }

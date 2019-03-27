@@ -10,8 +10,5 @@
   "license": "MIT",
   "devDependencies": {
     "lite-server": "^2.2.2"
-  },
-  "dependencies": {
-    "webcomponents.js": "^0.7.23"
   }
 }
