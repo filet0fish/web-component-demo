@@ -6,12 +6,10 @@ class WelcomeClass extends HTMLElement {
         let shadowRoot = this.attachShadow({mode: 'open'});
         shadowRoot.innerHTML = `
             <style>
-                h1 { color: rebeccapurple; }
+                h1 { color: cornflowerblue; }
             </style>
-            <h1>Hello, shadow dom!</h1>
+            <h1>Hello, Shadow Dom!</h1>
         `;
     }
-
-    connectedCallback() {}
 }
 window.customElements.define('welcome-message', WelcomeClass);

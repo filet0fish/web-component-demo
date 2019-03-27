@@ -7,11 +7,5 @@
     "type": "git"
   },
   "author": "Josh Trout <jtrout@gannett.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "lite-server": "^2.2.2"
-  },
-  "dependencies": {
-    "webcomponents.js": "^0.7.23"
-  }
+  "license": "MIT"
 }
