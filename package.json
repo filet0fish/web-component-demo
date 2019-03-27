@@ -1,14 +1,10 @@
 {
   "name": "web-component-demo",
   "version": "1.0.0",
-  "main": "index.js",
   "repository": {
     "url": "https://github.com/filet0fish/web-component-demo",
     "type": "git"
   },
-  "author": "Josh Trout <jtrout@gannett.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "lite-server": "^2.2.2"
-  }
+  "author": "Josh Trout <clearcache@gmail.com>",
+  "license": "MIT"
 }
