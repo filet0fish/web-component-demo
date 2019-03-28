@@ -1,12 +1,25 @@
 <html>
     <head>
         <script type="module" src="elements/welcome-message.js"></script>
-        <style>
-            h1 { color: #777; }
-        </style>
     </head>
     <body>
-        <welcome-message></welcome-message>
-        <h1>Standard h1</h1>
+        <h1>Web Component Demo</h1>
+        <welcome-message use-template="fredFormat">Frederick WebTech</welcome-message>
+        <p>Lorem ipsum dolor amet migas beard hoodie adaptogen pop-up. Lomo selvage hot chicken synth austin cray meggings wolf leggings. Fam vape man braid wolf neutra cray. Schlitz iPhone small batch, selvage polaroid cred woke fanny pack succulents truffaut irony before they sold out freegan ethical street art. Fixie stumptown air plant dreamcatcher hot chicken godard austin vape lyft shoreditch yuccie. Put a bird on it prism dreamcatcher lo-fi vegan hashtag.</p>
+
+        <welcome-message>Python Frederick</welcome-message>
+        <p>Asymmetrical you probably haven't heard of them typewriter next level normcore. Green juice vinyl art party pabst, letterpress bushwick migas bicycle rights vexillologist food truck snackwave venmo. Pop-up retro sustainable raw denim twee 8-bit. Wolf whatever lyft, pok pok skateboard asymmetrical tote bag blue bottle DIY cardigan shaman tattooed chillwave. Cred photo booth banh mi, hoodie palo santo jean shorts YOLO venmo fingerstache raw denim cliche. Banh mi tumblr normcore, dreamcatcher fashion axe shaman aesthetic intelligentsia.</p>
+
+        <welcome-message>KeyLUG</welcome-message>
+        <p>Four dollar toast etsy humblebrag, knausgaard lomo chillwave ramps distillery live-edge cronut drinking vinegar direct trade truffaut disrupt umami. Crucifix kinfolk bespoke prism shaman actually glossier chia yr, sartorial coloring book pug yuccie. Brooklyn normcore squid jean shorts cardigan cornhole. Keytar artisan edison bulb typewriter kitsch hashtag coloring book fanny pack. Put a bird on it godard jean shorts austin quinoa. Roof party truffaut plaid, pinterest hoodie butcher craft beer cliche sustainable kickstarter beard.</p>
+
+        <welcome-message>Amazon Web Services - Frederick</welcome-message>
+        <p>Mustache coloring book pickled vinyl palo santo narwhal. Hoodie franzen kinfolk, direct trade beard raw denim whatever blue bottle. Heirloom semiotics tbh flexitarian man braid cold-pressed typewriter 8-bit migas single-origin coffee bushwick. Scenester cred pop-up air plant bicycle rights celiac cornhole. Meggings kale chips literally gentrify.</p>
+
+        <template id="fredFormat">
+            <h1>Hello: <slot></slot></h1>
+            <hr />
+        </template>
+
     </body>
 </html>

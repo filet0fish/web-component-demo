@@ -1,19 +1,31 @@
-import { ColorPicker } from "./color-lib.js";
+import "./welcome-divider.js";
 
 class WelcomeClass extends HTMLElement {
 
     constructor() {
         super();
+        this.attachShadow({mode: 'open'});
+    }
 
-        let colors = new ColorPicker();
+    connectedCallback() {
+        let templateName = this.getAttribute('use-template');
+        this.render((templateName) ? document.getElementById(templateName) : null);
+    }
 
-        let shadowRoot = this.attachShadow({mode: 'open'});
-        shadowRoot.innerHTML = `
-            <style>
-                h1 { color: ${colors.textColor}; }
-            </style>
-            <h1>Hello, ES Module Imports!</h1>
-        `;
+    render(templateElement){
+        let elementStyles = document.createElement('style');
+        elementStyles.innerHTML = `h1 { color: cornflowerblue; }`;
+        let content; 
+
+        if (templateElement) {
+            content = document.importNode(templateElement.content, true);
+        } else {
+            content = document.createElement('div');
+            content.innerHTML = `<h1>Hello, <slot></slot></h1><welcome-divider></welcome-divider>`;
+        }
+
+        content.appendChild(elementStyles);
+        this.shadowRoot.appendChild(content);
     }
 }
 window.customElements.define('welcome-message', WelcomeClass);
