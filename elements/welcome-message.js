@@ -2,7 +2,9 @@ class WelcomeClass extends HTMLElement {
 
     constructor() {
         super();
+    }
 
+    connectedCallback() {
         let shadowRoot = this.attachShadow({mode: 'open'});
         shadowRoot.innerHTML = `
             <style>
