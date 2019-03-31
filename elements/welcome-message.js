@@ -5,18 +5,27 @@ class WelcomeClass extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({mode: 'open'});
+
+        this.elementStyles = document.createElement('style');
+        this.elementStyles.innerHTML = `h1 { color: cornflowerblue; }`;
+    }
+    
+    static get observedAttributes() { return ['use-template']; }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+        if (name === 'use-template') {
+            this.render();
+        }
     }
 
     connectedCallback() {
-        let templateName = this.getAttribute('use-template');
-        this.render((templateName) ? document.getElementById(templateName) : null);
+        this.render();
     }
 
-    render(templateElement){
-        let elementStyles = document.createElement('style');
-        elementStyles.innerHTML = `h1 { color: cornflowerblue; }`;
+    render(){
         let content; 
-
+        let templateElement = this.getAttribute('use-template') && document.querySelector(`#${this.getAttribute('use-template')}`);
+            
         if (templateElement) {
             content = document.importNode(templateElement.content, true);
         } else {
@@ -24,7 +33,8 @@ class WelcomeClass extends HTMLElement {
             content.innerHTML = `<h1>Hello, <slot></slot></h1><welcome-divider></welcome-divider>`;
         }
 
-        content.appendChild(elementStyles);
+        this.shadowRoot.innerHTML = '';
+        this.shadowRoot.appendChild(this.elementStyles);
         this.shadowRoot.appendChild(content);
     }
 }
