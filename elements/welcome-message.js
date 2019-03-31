@@ -4,7 +4,9 @@ class WelcomeClass extends HTMLElement {
 
     constructor() {
         super();
+    }
 
+    connectedCallback(){
         let colors = new ColorPicker();
 
         let shadowRoot = this.attachShadow({mode: 'open'});
